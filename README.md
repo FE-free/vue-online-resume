@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-09-06 17:47:36
  * @LastEditors: honghong
- * @LastEditTime: 2019-09-06 17:52:14
+ * @LastEditTime: 2019-09-06 18:01:52
  * @Description: 
  * @email: 3300536651@qq.com
  -->
@@ -37,3 +37,6 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## 插件
+- 【markdown】https://github.com/evilstreak/markdown-js
