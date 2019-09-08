@@ -1,23 +1,28 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
-}
+  name: 'app',
+  mounted() {
+    // 解决在地址栏输入路由跳转无效的问题
+    window.addEventListener(
+      'hashchange',
+      () => {
+        var currentPath = window.location.hash.slice(1); // 获取输入的路由
+        if (this.$router.path !== currentPath) {
+          this.$router.push(currentPath); // 动态跳转
+        }
+      },
+      false
+    );
+  }
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
