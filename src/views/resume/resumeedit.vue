@@ -9,8 +9,13 @@
 <template>
   <div>
     <div class="toolbar">
-      <a-button type="default" v-on:click="backHome()">回到首页</a-button>
-      <a-button type="primary" v-on:click="exportTemplate('template1','我的模版')">导出模版</a-button>
+      <span class="toolbar-title">简约风格</span>
+      <a-button
+        class="toolbar-btn"
+        type="primary"
+        v-on:click="exportTemplate('template1','我的模版')"
+      >导出模版</a-button>
+      <a-button class="toolbar-btn" type="default" v-on:click="backHome()">回到首页</a-button>
     </div>
 
     <component v-bind:is="currentTabComponent"></component>
@@ -21,14 +26,14 @@
 import Template1 from '@/components/template/template1';
 import { exportPdf } from '@/utils/utils';
 export default {
-  name: 'resumeedit',
+  name: 'resume-edit',
   props: [],
   data() {
     return {};
   },
   methods: {
     exportTemplate(id, fileName) {
-      exportPdf(id, fileName);
+      exportPdf(id, fileName, false);
     },
     backHome() {
       this.$router.push('/');

@@ -10,7 +10,7 @@
   <div>
     <a-card :bordered="false" :hoverable="false" class="template-preview">
       <div>
-        <img :src="imgUrl" width="100%" height="200" alt="templatePreview" />
+        <img :src="imgUrl" width="100%" height="200" class="small-preview" alt="templatePreview" />
       </div>
       <a-card-meta :title="title" :description="description"></a-card-meta>
       <div class="mask">
@@ -35,6 +35,7 @@
 
 <script>
 import Template1 from '@/components/template/template1';
+import MarkdownTemplate from '@/components/markdown';
 export default {
   name: 'resumeitem',
   props: {
@@ -45,7 +46,7 @@ export default {
     imgUrl: String,
     id: {
       stype: String,
-      default: 1
+      default: '1'
     },
     description: String
   },
@@ -65,7 +66,11 @@ export default {
       setTimeout(() => {
         this.visible = false;
         this.loading = true;
-        this.$router.push(`/resumeEdit/${this.id}`);
+        if (this.id === 'markdown') {
+          this.$router.push(`/markdown`);
+        } else {
+          this.$router.push(`/resumeEdit/${this.id}`);
+        }
       }, 0);
     }
   },
@@ -75,7 +80,8 @@ export default {
     }
   },
   components: {
-    resumeTemplate1: Template1
+    resumeTemplate1: Template1,
+    resumeTemplatemarkdown: MarkdownTemplate
   }
 };
 </script>
@@ -97,7 +103,12 @@ export default {
   visibility: hidden;
   transform: scale(0);
 }
-
+.small-preview {
+  border-radius: 2px;
+  background: #eee;
+  padding: 2px;
+  margin-bottom: 10px;
+}
 .template-preview .btn {
   visibility: visible;
   position: absolute;

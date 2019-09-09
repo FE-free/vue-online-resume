@@ -3,9 +3,16 @@
 import Vue from 'vue';
 import App from './App';
 import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
-import { creatRouter } from './router';
+import mavonEditor from 'mavon-editor';
 
+import 'ant-design-vue/dist/antd.css';
+import '@/assets/styles/app.css';
+import {
+  creatRouter
+} from './router';
+import 'mavon-editor/dist/css/index.css';
+// use
+Vue.use(mavonEditor);
 Vue.use(Antd);
 const router = creatRouter();
 Vue.config.productionTip = false;

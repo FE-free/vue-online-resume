@@ -7,13 +7,11 @@ Vue.use(Router);
 export function creatRouter() {
   const router = new Router({
     mode: 'hash', // 设置为history gh-pages 出现404
-    routes: [
-      {
+    routes: [{
         path: '/',
         component: Layout,
         hidden: true,
-        children: [
-          {
+        children: [{
             path: '/',
             component: () => import('@/views/home/index')
           },
@@ -24,6 +22,9 @@ export function creatRouter() {
           {
             path: '/resumeEdit/:id',
             component: () => import('@/views/resume/resumeedit')
+          }, {
+            path: '/markdown',
+            component: () => import('@/views/resume/markdownedit')
           }
         ]
       },

@@ -1,0 +1,21 @@
+.toolbar {
+  margin: 10px;
+}
+
+.toolbar::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.toolbar-title {
+  float: left;
+  height: 32px;
+  line-height: 32px;
+  display: block;
+}
+
+.toolbar-btn {
+  float: right;
+  margin-left: 20px;
+}

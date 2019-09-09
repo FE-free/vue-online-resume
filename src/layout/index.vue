@@ -14,7 +14,7 @@
       </div>
     </a-layout-header>
     <a-layout-content>
-      <div :style="{ background: '#fafafa', padding: '24px', minHeight: '280px' }">
+      <div class="content">
         <router-view></router-view>
       </div>
     </a-layout-content>
@@ -49,5 +49,10 @@ export default {
 
 .text {
   color: red;
+}
+.content {
+  background: '#fafafa';
+  padding: '10px 20px';
+  min-height: '380px';
 }
 </style>

@@ -9,9 +9,13 @@
 import * as jsPDF from 'jspdf';
 
 import html2canvas from 'html2canvas';
-export function exportPdf(elementId, fileName) {
+export function exportPdf(elementName, fileName, isClass) {
   global.html2canvas = html2canvas; // 解决html2canvas is not a function的问题
-  let element = document.getElementById(elementId); // 这个dom元素是要导出pdf的div容器
+
+  let element = document.getElementById(elementName); // 这个dom元素是要导出pdf的div容器
+  if (isClass) {
+    element = document.getElementsByClassName(elementName)[0];
+  }
   let w = element.offsetWidth; // 获得该容器的宽
   let h = element.offsetHeight; // 获得该容器的高
   let offsetTop = element.scrollTop; // 获得该容器到文档顶部的距离
@@ -31,7 +35,7 @@ export function exportPdf(elementId, fileName) {
   // 这里默认横向没有滚动条的情况，因为offset.left(),有无滚动条的时候存在差值，因此
   // translate的时候，要把这个差值去掉
   console.log(element, 'html2canvas');
-  html2canvas(element).then(function(canvas) {
+  html2canvas(element).then(function (canvas) {
     var contentWidth = canvas.width;
     var contentHeight = canvas.height;
     // 一页pdf显示html页面生成的canvas高度;

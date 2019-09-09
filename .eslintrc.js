@@ -19,11 +19,19 @@ module.exports = {
   plugins: ['vue'],
   // add your custom rules here
   rules: {
+    'indent': 'off',
     // allow async-await
     'generator-star-spacing': 'off',
     'space-before-function-paren': 0,
+    "no-irregular-whitespace": ["error", {
+      "skipTemplates": true
+
+    }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    semi: ['error', 'always']
+    semi: ['error', 'always'],
+    "no-trailing-spaces": ["error", {
+      "skipBlankLines": true
+    }]
   }
 };

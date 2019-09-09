@@ -2,20 +2,26 @@
  * @Author: honghong
  * @Date: 2019-09-04 14:02:36
  * @LastEditors: honghong
- * @LastEditTime: 2019-09-06 14:29:06
+ * @LastEditTime: 2019-09-09 10:47:10
  * @Description: 首页
  * @email: 3300536651@qq.com
  -->
 <template>
   <div class="home">
-    <div class="banner">
-      <img class="banner-item" :src="banner1" width="100%" />
-    </div>
+    <div class="banner"></div>
     <div class="classify">
-      <a-checkable-tag color="blue" v-model="checkedFe" @change="handleChange">前端</a-checkable-tag>
-      <a-checkable-tag color v-model="checkedJava" @change="handleChange">Java</a-checkable-tag>
+      <a-checkable-tag
+        color="blue"
+        v-model="checkedList.checkedFe"
+        @change="handleChange('checkedFe')"
+      >前端</a-checkable-tag>
+      <a-checkable-tag
+        color
+        v-model="checkedList.checkedJava"
+        @change="handleChange('checkedJava')"
+      >Java</a-checkable-tag>
     </div>
-    <div style="background-color: #ececec; padding: 20px;">
+    <div class="template-list" v-if="checkedList.checkedFe===true">
       <a-row :gutter="16">
         <a-col
           :span="6"
@@ -24,6 +30,7 @@
           v-bind:class="{marginT: i>3}"
         >
           <resume-item
+            :id="template.id"
             :title="template.title"
             :imgUrl="template.img"
             :description="template.description"
@@ -31,6 +38,7 @@
         </a-col>
       </a-row>
     </div>
+    <div class="template-list" v-if="checkedList.checkedJava===true">正在开发中</div>
   </div>
 </template>
 
@@ -42,58 +50,44 @@ export default {
   name: 'home',
   data() {
     return {
-      checkedFe: true,
-      checkedJava: false,
+      checkedList: {
+        checkedFe: true,
+        checkedJava: false
+      },
       banner1: banner1,
       templates: [
         {
-          id: 1,
-          img: require('@/assets/images/3.jpeg'),
-          title: '前端模版1',
+          id: 'markdown',
+          img: require('@/assets/images/markdown.jpg'),
+          title: 'markdown风格',
           description: '100人'
         },
         {
-          id: 2,
+          id: '1',
           img: require('@/assets/images/3.jpeg'),
-          title: '前端模版2',
+          title: '简约风格',
           description: '200人'
-        },
-        {
-          id: 3,
-          img: require('@/assets/images/3.jpeg'),
-          title: '前端模版3',
-          description: '50人'
-        },
-        {
-          id: 4,
-          img: require('@/assets/images/3.jpeg'),
-          title: '前端模版4',
-          description: '100人'
-        },
-        {
-          id: 5,
-          img: require('@/assets/images/3.jpeg'),
-          title: '前端模版5',
-          description: '100人'
-        },
-        {
-          id: 6,
-          img: require('@/assets/images/3.jpeg'),
-          title: '前端模版6',
-          description: '100人'
-        },
-        {
-          id: 7,
-          img: require('@/assets/images/3.jpeg'),
-          title: '前端模版7',
-          description: '100人'
         }
       ]
     };
   },
   methods: {
-    handleChange(checked) {}
+    handleChange(checkedItem) {
+      for (let i = 0; i < this.checkedList.length; i++) {
+        this.checkedList[i] = false;
+        if (this.checkedList[i] === checkedItem) {
+          this.checkedList[i] = true;
+        }
+      }
+
+      console.log(checkedItem, 'checked');
+      console.log(this.checkedList, 'checked');
+    },
+    goMarkdown() {
+      this.$router.push('/markdown');
+    }
   },
+  created() {},
   computed: {},
   components: {
     'resume-item': ResumeItem,
@@ -121,5 +115,9 @@ export default {
 .classify .ant-tag {
   padding: 0 20px;
   border-radius: 30px;
+}
+.template-list {
+  background-color: #ececec;
+  padding: 20px;
 }
 </style>
