@@ -2,73 +2,42 @@
  * @Author: honghong
  * @Date: 2019-09-06 17:47:36
  * @LastEditors: honghong
- * @LastEditTime: 2019-09-10 11:12:25
+ * @LastEditTime: 2019-09-10 17:48:57
  * @Description: 
  * @email: 3300536651@qq.com
  -->
 
 # 开发者在线简历 vue-online-resume
-
+固定排版，不固定数量,可以根据模版在线编辑和修改,导出pdf,
 > vue online edit resume export pdf, edit markdown export resume
 
-## Build Setup
+- 预览地址: https://fe-free.github.io/vue-online-resume/
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+## 学习
+- vue-loader 没有 vue-template-compiler 
+编译.vue文件
+```bash
+npm install ant-design-vue --save
 ```
+- vue-style-loader 解析、编译vue单文件组件中的样式
+- vue-loader 解析、编译vue单文件组件
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+-  HTML5全局 contenteditable 属性
 
 ## 插件
-- 【markdown】https://github.com/evilstreak/markdown-js
-https://github.com/markedjs/marked
 https://github.com/sparksuite/simplemde-markdown-editor
 
 ## 规范
 ### commit 提交 Git 时规范
-```bash
-const types = [
-  'build',
-  "chore",
-  'ci',
-  'docs',
-  'feat',
-  'fix',
-  'perf',
-  'refactor',
-  "release",
-  'revert',
-  'style',
-  'test'
-];
+## 问题
+- gh-pages 出现404 
 
-const scopes = [
-  "showcase",
-  "packaging",
-  "changelog",
-  "schematics",
-  "module:*"
-];
-```
+ mode: 'hash', // 设置为history `gh-pages` 出现404
+ 如果想设置为history，是需要服务端设置的，而github 只是静态资源，不支持Nodejs、Java、Nginx等设置
+- html2canvas 导出pdf宽度不完整
+参考: https://www.jianshu.com/p/570c84ee2e8d
+## 不足之处
+导出的pdf是通过canvas截图，不支持搜索文字
 
 ## 参考文章
 - [【commit规范和自动生成changelog】](https://juejin.im/post/5bd2debfe51d457abc710b57#heading-4)
