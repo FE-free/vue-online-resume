@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-09-06 17:47:36
  * @LastEditors: honghong
- * @LastEditTime: 2019-09-10 14:16:19
+ * @LastEditTime: 2019-09-10 14:19:48
  * @Description: 
  * @email: 3300536651@qq.com
  */
@@ -17,7 +17,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
     proxyTable: {},
 
     // Various Dev Server settings
