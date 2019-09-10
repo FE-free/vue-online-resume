@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-09-02 11:03:15
  * @LastEditors: honghong
- * @LastEditTime: 2019-09-05 17:21:13
+ * @LastEditTime: 2019-09-10 14:07:10
  * @Description: 模板
  * @email: 3300536651@qq.com
  -->
@@ -22,7 +22,7 @@
       title="预览"
       onOk="handleOk"
       width="95%"
-      :bodyStyle="{position:'relative'}"
+      :bodyStyle="{position:'relative',maxHeight:'400px',overflow:'auto'}"
     >
       <template slot="footer">
         <a-button key="submit" type="primary" :loading="loading" @click="handleOk">使用模版</a-button>

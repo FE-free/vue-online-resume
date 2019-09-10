@@ -1,0 +1,2 @@
+webpackJsonp([3],{"5HsE":function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var s={render:function(){var e=this.$createElement;return(this._self._c||e)("div",{staticClass:"signin"},[this._v("登录")])},staticRenderFns:[]},i=t("VU/8")({name:"signin",data:function(){return{}},methods:{},computed:{},components:{}},s,!1,null,null,null);n.default=i.exports}});
+//# sourceMappingURL=3.2c7fb00e89cd00362238.js.map

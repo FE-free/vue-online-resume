@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-09-06 17:47:36
  * @LastEditors: honghong
- * @LastEditTime: 2019-09-10 09:56:31
+ * @LastEditTime: 2019-09-10 11:12:25
  * @Description: 
  * @email: 3300536651@qq.com
  -->
@@ -69,3 +69,6 @@ const scopes = [
   "module:*"
 ];
 ```
+
+## 参考文章
+- [【commit规范和自动生成changelog】](https://juejin.im/post/5bd2debfe51d457abc710b57#heading-4)

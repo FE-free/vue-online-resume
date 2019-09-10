@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-09-04 14:02:36
  * @LastEditors: honghong
- * @LastEditTime: 2019-09-09 10:47:10
+ * @LastEditTime: 2019-09-10 14:01:05
  * @Description: 首页
  * @email: 3300536651@qq.com
  -->
@@ -51,8 +51,8 @@ export default {
   data() {
     return {
       checkedList: {
-        checkedFe: true,
-        checkedJava: false
+        'checkedFe': true,
+        'checkedJava': false
       },
       banner1: banner1,
       templates: [
@@ -73,14 +73,13 @@ export default {
   },
   methods: {
     handleChange(checkedItem) {
-      for (let i = 0; i < this.checkedList.length; i++) {
-        this.checkedList[i] = false;
-        if (this.checkedList[i] === checkedItem) {
-          this.checkedList[i] = true;
+      for (var k in this.checkedList) {
+        this.checkedList[k] = false;
+        if (k === checkedItem) {
+          this.checkedList[k] = true;
         }
       }
 
-      console.log(checkedItem, 'checked');
       console.log(this.checkedList, 'checked');
     },
     goMarkdown() {

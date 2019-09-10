@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-09-02 14:52:55
  * @LastEditors: honghong
- * @LastEditTime: 2019-09-06 14:42:17
+ * @LastEditTime: 2019-09-10 14:07:55
  * @Description: layout
  * @email: 3300536651@qq.com
  -->
@@ -50,9 +50,9 @@ export default {
 .text {
   color: red;
 }
-.content {
-  background: '#fafafa';
-  padding: '10px 20px';
-  min-height: '380px';
+.layout .content {
+  background: #fafafa;
+  padding: 10px 20px;
+  min-height: 500px;
 }
 </style>
