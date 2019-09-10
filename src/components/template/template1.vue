@@ -71,7 +71,6 @@ export default {
 <style>
 .template-wrap {
   background: #fafafa;
-  padding-top: 20px;
 }
 
 .template-inner {

@@ -1,3 +1,11 @@
+/*
+ * @Author: honghong
+ * @Date: 2019-09-06 17:47:36
+ * @LastEditors: honghong
+ * @LastEditTime: 2019-09-10 14:16:19
+ * @Description: 
+ * @email: 3300536651@qq.com
+ */
 'use strict'
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
@@ -45,10 +53,10 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../docs/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, '../docs'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
 
