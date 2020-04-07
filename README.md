@@ -11,7 +11,9 @@
 固定排版，不固定数量,可以根据模版在线编辑和修改,导出pdf,
 > vue online edit resume export pdf, edit markdown export resume
 
-- 预览地址: https://fe-free.github.io/vue-online-resume/
+## 预览地址:
+- 码云预览速度更快：http://perfect_l.gitee.io/vue-online-resume
+- github预览: https://fe-free.github.io/vue-online-resume/
 
 ## 学习
 - vue-loader 没有 vue-template-compiler 
